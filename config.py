@@ -1,11 +1,12 @@
 import os
 from pathlib import Path
-from dotenv import load_dotenv
-
-BASE_DIR = Path(__file__).resolve().parent
-ENV_PATH = BASE_DIR / ".env"
-
-load_dotenv(dotenv_path=ENV_PATH)
+try:
+    from dotenv import load_dotenv
+    BASE_DIR = Path(__file__).resolve().parent
+    ENV_PATH = BASE_DIR / ".env"
+    load_dotenv(dotenv_path=ENV_PATH)
+except ImportError:
+    pass
 
 # Pinterest Config
 PINTEREST_APP_ID = os.getenv("PINTEREST_APP_ID", "")
