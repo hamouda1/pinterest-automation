@@ -2,7 +2,7 @@ name: Pinterest 24/7 Multi-Account Network Publisher
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '15 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -35,6 +35,8 @@ jobs:
         env:
           PINTEREST_ACCOUNTS_JSON: ${{ secrets.PINTEREST_ACCOUNTS_JSON }}
           PINTEREST_ROOT: .
+          USE_BRIDGE: "true"
+          BRIDGE_BASE_URL: "https://hamouda1.github.io/pinterest-automation/"
         run: |
           python master_network_publisher.py
 
