@@ -22,9 +22,9 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install Playwright & Chromium
+      - name: Install dependencies & Playwright Chromium
         run: |
-          pip install playwright
+          pip install -r requirements.txt
           playwright install --with-deps chromium
 
       - name: Run Pin Generator Script
