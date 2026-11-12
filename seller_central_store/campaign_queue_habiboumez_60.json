@@ -322,8 +322,12 @@
     "board_id": "1093037840753522211",
     "board_name": "Vintage Retro Tees & 90s Aesthetic Fits",
     "account": "habiboumez",
-    "status": "pending",
-    "queue_order": 16
+    "status": "published",
+    "queue_order": 16,
+    "published": true,
+    "pin_id": "1093037772100979723",
+    "pin_url": "https://www.pinterest.com/pin/1093037772100979723/",
+    "published_at": "2026-11-12 21:39:01"
   },
   {
     "asin": "B0HJ1BDR8W",

@@ -3360,9 +3360,13 @@
     "description": "Discover this Luxury Linen Mists & Room Sprays find on Amazon! Aesthetic, highly rated, and perfect for your home sanctuary. #amazonfinds #homedecor #selfcare #ad",
     "image_url": "https://m.media-amazon.com/images/I/81282ncZzzL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B0GYS7SNZB?tag=mostefa-daoua-20",
-    "status": "pending",
+    "status": "published",
     "queue_index": 224,
-    "link": "https://www.amazon.com/dp/B0GYS7SNZB?tag=mostefa-daoua-20"
+    "link": "https://www.amazon.com/dp/B0GYS7SNZB?tag=mostefa-daoua-20",
+    "published": true,
+    "pin_id": "268667934019004666",
+    "pin_url": "https://www.pinterest.com/pin/268667934019004666/",
+    "published_at": "2026-11-12 21:39:14"
   },
   {
     "board_id": "268668002709769949",
