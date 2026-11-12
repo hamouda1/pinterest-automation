@@ -186,14 +186,27 @@ def run_network_round(dry_run=False, target_account=None):
         asin = target_item.get("asin")
         img_url = target_item.get("image_url")
         if USE_BRIDGE and asin and img_url and not cfg.get("is_seller_apparel"):
-            params = urllib.parse.urlencode({
+            params_dict = {
                 "asin": asin,
                 "tag": "mostefa-daoua-20",
                 "title": title[:65],
                 "img": img_url,
                 "tpl": "pin"
-            })
-            link = f"{BRIDGE_BASE_URL.rstrip('/')}/?{params}"
+            }
+            # Pick up to 2 related items from the same queue
+            related_candidates = [
+                it for it in queue 
+                if it != target_item and it.get("asin") and it.get("image_url") and it.get("asin") != asin
+            ]
+            if related_candidates:
+                import random
+                sample_rel = random.sample(related_candidates, min(2, len(related_candidates)))
+                for r_idx, rel in enumerate(sample_rel, start=1):
+                    params_dict[f"r{r_idx}"] = rel["asin"]
+                    r_title = (rel.get("seo_title") or rel.get("title") or "Curated Find")
+                    params_dict[f"r{r_idx}_t"] = r_title.split("|")[0].split("-")[0].strip()[:42]
+                    params_dict[f"r{r_idx}_i"] = rel["image_url"]
+            link = f"{BRIDGE_BASE_URL.rstrip('/')}/?{urllib.parse.urlencode(params_dict)}"
         else:
             link = raw_link
         
