@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: {{BG_COLOR}};       /* e.g., #EEF1F4 */
+      --accent-color: {{ACCENT_COLOR}}; /* e.g., #1E293B */
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 1000px;
+      height: 1500px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-primary);
+      padding: 45px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* شريط العنوان العلوي العصري */
+    .header-box {
+      background-color: var(--accent-color);
+      color: #ffffff;
+      border-radius: 32px;
+      padding: 38px 45px;
+      text-align: center;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+    }
+
+    .sub-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-size: 19px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin-bottom: 16px;
+    }
+
+    .main-heading {
+      font-size: 44px;
+      font-weight: 900;
+      line-height: 1.2;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* المنتج الرئيسي الكبير (Hero) */
+    .hero-card {
+      width: 100%;
+      height: 620px;
+      background: #ffffff;
+      border-radius: 36px;
+      padding: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.07);
+    }
+
+    .hero-card img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    .featured-tag {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      background: var(--accent-color);
+      color: #ffffff;
+      padding: 10px 24px;
+      border-radius: 14px;
+      font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* صف المنتجات الثلاثة المكملة */
+    .mini-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      height: 310px;
+    }
+
+    .mini-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+    }
+
+    .mini-card img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    .plus-badge {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      background: var(--bg-primary);
+      color: var(--accent-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    /* الشريط السفلي */
+    .footer-cta {
+      background: #ffffff;
+      border: 4px solid var(--accent-color);
+      border-radius: 24px;
+      padding: 22px 35px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-cta-text {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-domain {
+      font-size: 20px;
+      font-weight: 700;
+      color: #64748B;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-box">
+    <div class="sub-badge">{{CATEGORY}}</div>
+    <h1 class="main-heading">{{COLLECTION_TITLE}}</h1>
+  </div>
+
+  <!-- الصورة الرئيسية -->
+  <div class="hero-card">
+    <span class="featured-tag">#1 Must-Have</span>
+    <img src="{{IMAGE_1}}" alt="Main Product">
+  </div>
+
+  <!-- 3 صور فرعية -->
+  <div class="mini-row">
+    <div class="mini-card">
+      <img src="{{IMAGE_2}}" alt="Item 2">
+      <span class="plus-badge">+</span>
+    </div>
+    <div class="mini-card">
+      <img src="{{IMAGE_3}}" alt="Item 3">
+      <span class="plus-badge">+</span>
+    </div>
+    <div class="mini-card">
+      <img src="{{IMAGE_4}}" alt="Item 4">
+      <span class="plus-badge">+</span>
+    </div>
+  </div>
+
+  <div class="footer-cta">
+    <span class="footer-cta-text">See Full Setup List →</span>
+    <span class="footer-domain">{{DOMAIN_NAME}}</span>
+  </div>
+
+</body>
+</html>
