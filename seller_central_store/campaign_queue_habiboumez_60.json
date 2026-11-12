@@ -343,8 +343,12 @@
     "board_id": "1093037840753522205",
     "board_name": "Trending Graphic Tees & Aesthetic Shirts",
     "account": "habiboumez",
-    "status": "pending",
-    "queue_order": 17
+    "status": "published",
+    "queue_order": 17,
+    "published": true,
+    "pin_id": "1093037772100979910",
+    "pin_url": "https://www.pinterest.com/pin/1093037772100979910/",
+    "published_at": "2026-11-12 21:42:00"
   },
   {
     "asin": "B0HKV3BGJ5",

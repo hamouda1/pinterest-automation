@@ -1577,8 +1577,12 @@
     "description": "Curated for Canva designers, freelancers, Airbnb hosts, and modern business owners: WiFi QR Code Sign Sticker – Scan to Connect – 4 x 4 in. Level up your professional aesthetic and workflow. Tap the pin to check pricing, specs, and details on Amazon! #airbnbhost #shorttermrental #vacationrental #superhost #airbnbinspo #ad",
     "image_url": "https://m.media-amazon.com/images/I/71q1OHA7i0L.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B0HG63B54B?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 8
+    "status": "published",
+    "queue_index": 8,
+    "published": true,
+    "pin_id": "267753140343833869",
+    "pin_url": "https://www.pinterest.com/pin/267753140343833869/",
+    "published_at": "2026-11-12 21:42:54"
   },
   {
     "board_id": "267753209035489470",
