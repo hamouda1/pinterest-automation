@@ -1,6 +1,2 @@
-accounts.json
-.env
-__pycache__/
-*.pyc
-.pytest_cache/
-chrome_tmp_profile/
+# Static landing pages repository
+.DS_Store
