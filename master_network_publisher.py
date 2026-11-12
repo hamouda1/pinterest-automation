@@ -9,6 +9,8 @@ import time
 import base64
 import argparse
 import urllib.parse
+import re
+import random
 from datetime import datetime
 from pinterest_api import PinterestAPI
 from template_engine_master import generate_master_pin_base64
@@ -185,27 +187,62 @@ def run_network_round(dry_run=False, target_account=None):
         
         asin = target_item.get("asin")
         img_url = target_item.get("image_url")
-        if USE_BRIDGE and asin and img_url and not cfg.get("is_seller_apparel"):
+        if USE_BRIDGE and asin:
             params_dict = {
                 "asin": asin,
                 "tag": "mostefa-daoua-20",
                 "title": title[:65],
-                "img": img_url,
                 "tpl": "pin"
             }
-            # Pick up to 2 related items from the same queue
-            related_candidates = [
+            if img_url:
+                params_dict["img"] = img_url
+                
+            # Smart Semantic Matching:
+            # 1. First priority: Candidates from the EXACT SAME BOARD (Micro-Niche Isolation)
+            target_board_id = str(board_id) if board_id else ""
+            target_board_name = (board_name or "").strip().lower()
+            
+            def is_same_board(item):
+                b_id = str(item.get("board_id") or "")
+                b_name = (item.get("board_name") or "").strip().lower()
+                return (target_board_id and b_id == target_board_id) or (target_board_name and b_name == target_board_name)
+
+            board_candidates = [
                 it for it in queue 
-                if it != target_item and it.get("asin") and it.get("image_url") and it.get("asin") != asin
+                if it != target_item and it.get("asin") and it.get("asin") != asin and is_same_board(it)
             ]
-            if related_candidates:
-                import random
-                sample_rel = random.sample(related_candidates, min(2, len(related_candidates)))
+            candidates_pool = board_candidates if len(board_candidates) >= 2 else [
+                it for it in queue if it != target_item and it.get("asin") and it.get("asin") != asin
+            ]
+            
+            if candidates_pool:
+                stopwords = {'and', 'for', 'with', 'the', 'amazon', 'viral', 'find', 'finds', 'curated', 'best', 'aesthetic', 'set', 'new', 'women', 'men'}
+                target_words = set(re.findall(r'\b[a-zA-Z]{3,}\b', title.lower())) - stopwords
+                
+                scored = []
+                for c in candidates_pool:
+                    c_title = (c.get("seo_title") or c.get("title") or c.get("product_title") or "").lower()
+                    c_words = set(re.findall(r'\b[a-zA-Z]{3,}\b', c_title)) - stopwords
+                    score = len(target_words & c_words)
+                    scored.append((score, c))
+                
+                scored.sort(key=lambda x: x[0], reverse=True)
+                top_matches = [c for s, c in scored if s > 0]
+                if len(top_matches) >= 2:
+                    sample_rel = random.sample(top_matches[:6], 2)
+                elif len(top_matches) == 1:
+                    zero_matches = [c for s, c in scored if s == 0]
+                    sample_rel = [top_matches[0]] + (random.sample(zero_matches, 1) if zero_matches else [])
+                else:
+                    sample_rel = random.sample(candidates_pool, min(2, len(candidates_pool)))
+                    
                 for r_idx, rel in enumerate(sample_rel, start=1):
                     params_dict[f"r{r_idx}"] = rel["asin"]
-                    r_title = (rel.get("seo_title") or rel.get("title") or "Curated Find")
+                    r_title = (rel.get("seo_title") or rel.get("title") or rel.get("product_title") or "Curated Find")
                     params_dict[f"r{r_idx}_t"] = r_title.split("|")[0].split("-")[0].strip()[:42]
-                    params_dict[f"r{r_idx}_i"] = rel["image_url"]
+                    if rel.get("image_url"):
+                        params_dict[f"r{r_idx}_i"] = rel["image_url"]
+                        
             link = f"{BRIDGE_BASE_URL.rstrip('/')}/?{urllib.parse.urlencode(params_dict)}"
         else:
             link = raw_link
