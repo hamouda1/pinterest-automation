@@ -8,10 +8,14 @@ import json
 import time
 import base64
 import argparse
+import urllib.parse
 from datetime import datetime
 from pinterest_api import PinterestAPI
 from template_engine_master import generate_master_pin_base64
 from clean_apparel_engine import render_masterpiece_pin
+
+USE_BRIDGE = os.environ.get("USE_BRIDGE", "true").lower() == "true"
+BRIDGE_BASE_URL = os.environ.get("BRIDGE_BASE_URL", "https://hamouda1.github.io/pinterest-automation/")
 
 # Complete 11 Accounts & Verified Target Board Configuration
 ACCOUNTS_CONFIG = [
@@ -176,8 +180,22 @@ def run_network_round(dry_run=False, target_account=None):
         board_name = target_item.get("board_name") or default_bname
         
         title = target_item.get("seo_title") or target_item.get("title") or "Aesthetic Amazon Find"
-        link = target_item.get("affiliate_url") or target_item.get("link") or ""
+        raw_link = target_item.get("affiliate_url") or target_item.get("link") or ""
         desc = target_item.get("seo_desc") or target_item.get("description") or title
+        
+        asin = target_item.get("asin")
+        img_url = target_item.get("image_url")
+        if USE_BRIDGE and asin and img_url and not cfg.get("is_seller_apparel"):
+            params = urllib.parse.urlencode({
+                "asin": asin,
+                "tag": "mostefa-daoua-20",
+                "title": title[:65],
+                "img": img_url,
+                "tpl": "pin"
+            })
+            link = f"{BRIDGE_BASE_URL.rstrip('/')}/?{params}"
+        else:
+            link = raw_link
         
         print(f"   🎯 Target Board: {board_name} (ID: {board_id})", flush=True)
         print(f"   📌 Title: {title[:60]}...", flush=True)
