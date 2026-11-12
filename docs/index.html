@@ -236,14 +236,14 @@
       // تثبيت معرف الأفلييت الخاص بك كقيمة أساسية محمية ضد التلاعب
       const LOCKED_AFFILIATE_TAG = "mostefa-daoua-20";
 
-      const params = new URLSearchParams(window.location.search);
-      const rawAsin = (params.get("asin") || "").trim().toUpperCase();
+      const params = new URLSearchParams(window.location.search || window.location.hash.replace(/^#\/?/, ""));
+      const rawAsin = (params.get("asin") || "").trim().toUpperCase().replace(/[^A-Z0-9]/g, "");
       const rawTitle = (params.get("title") || "Curated Aesthetic Find").trim();
       const rawImg = (params.get("img") || "").trim();
       const rawTpl = (params.get("tpl") || "pin").replace(/[^a-zA-Z0-9_-]/g, "");
 
       // التحقق من صحة رقم ASIN (عشرة محارف من حروف وأرقام)
-      const isValidAsin = /^[A-Z0-9]{10}$/.test(rawAsin);
+      const isValidAsin = rawAsin.length === 10;
 
       if (!isValidAsin) {
         document.getElementById("product-view").style.display = "none";
