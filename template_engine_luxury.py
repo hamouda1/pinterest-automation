@@ -9,17 +9,21 @@ if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8")
 
 FONTS_DIR_CANDIDATE = Path(__file__).resolve().parent / "fonts"
-FONT_DIR = str(FONTS_DIR_CANDIDATE) if FONTS_DIR_CANDIDATE.exists() else r"C:\Windows\Fonts"
-FONT_TITLE_SERIF = ImageFont.truetype(rf"{FONT_DIR}\georgiab.ttf", 36)
-FONT_TITLE_LARGE = ImageFont.truetype(rf"{FONT_DIR}\georgiab.ttf", 42)
-FONT_SUB_SERIF = ImageFont.truetype(rf"{FONT_DIR}\georgia.ttf", 20)
-FONT_SUB_ITALIC = ImageFont.truetype(rf"{FONT_DIR}\georgia.ttf", 19)
-FONT_SANS_BOLD = ImageFont.truetype(rf"{FONT_DIR}\segoeuib.ttf", 21)
-FONT_SANS_MED = ImageFont.truetype(rf"{FONT_DIR}\segoeuib.ttf", 15)
-FONT_SANS_SMALL = ImageFont.truetype(rf"{FONT_DIR}\segoeuib.ttf", 13)
-FONT_SANS_REG = ImageFont.truetype(rf"{FONT_DIR}\segoeui.ttf", 15)
-FONT_STARS = ImageFont.truetype(rf"{FONT_DIR}\segoeui.ttf", 22)
-FONT_QUOTE_BIG = ImageFont.truetype(rf"{FONT_DIR}\georgiab.ttf", 64)
+FONT_DIR = FONTS_DIR_CANDIDATE if FONTS_DIR_CANDIDATE.exists() else Path(r"C:\Windows\Fonts")
+
+def _get_font(filename, size):
+    return ImageFont.truetype(str(FONT_DIR / filename), size)
+
+FONT_TITLE_SERIF = _get_font("georgiab.ttf", 36)
+FONT_TITLE_LARGE = _get_font("georgiab.ttf", 42)
+FONT_SUB_SERIF = _get_font("georgia.ttf", 20)
+FONT_SUB_ITALIC = _get_font("georgia.ttf", 19)
+FONT_SANS_BOLD = _get_font("segoeuib.ttf", 21)
+FONT_SANS_MED = _get_font("segoeuib.ttf", 15)
+FONT_SANS_SMALL = _get_font("segoeuib.ttf", 13)
+FONT_SANS_REG = _get_font("segoeui.ttf", 15)
+FONT_STARS = _get_font("segoeui.ttf", 22)
+FONT_QUOTE_BIG = _get_font("georgiab.ttf", 64)
 
 # -------------------------------------------------------------
 # Text Wrapping Helper (Guarantees 0% text overflow anywhere)
