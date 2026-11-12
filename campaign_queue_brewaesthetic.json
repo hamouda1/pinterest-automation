@@ -2698,10 +2698,14 @@
     "board_name": "Syrup Dispensers, Jars & Organizers",
     "style_tag": "Syrup Station Styling",
     "price": "$19.99",
-    "status": "pending",
+    "status": "published",
     "created_at": "2026-11-09T15:16:14Z",
     "queue_index": 155,
-    "affiliate_url": "https://www.amazon.com/dp/B0HDJ8P36C?tag=mostefa-daoua-20"
+    "affiliate_url": "https://www.amazon.com/dp/B0HDJ8P36C?tag=mostefa-daoua-20",
+    "published": true,
+    "pin_id": "281615782945727113",
+    "pin_url": "https://www.pinterest.com/pin/281615782945727113/",
+    "published_at": "2026-11-12 20:51:26"
   },
   {
     "asin": "B0GQTGGKJY",

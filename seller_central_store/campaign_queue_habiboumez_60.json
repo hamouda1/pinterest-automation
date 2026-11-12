@@ -301,8 +301,12 @@
     "board_id": "1093037840753522206",
     "board_name": "Cozy Hoodies & Streetwear Outfits",
     "account": "habiboumez",
-    "status": "pending",
-    "queue_order": 15
+    "status": "published",
+    "queue_order": 15,
+    "published": true,
+    "pin_id": "1093037772100976237",
+    "pin_url": "https://www.pinterest.com/pin/1093037772100976237/",
+    "published_at": "2026-11-12 20:51:08"
   },
   {
     "asin": "B0HNYY3521",

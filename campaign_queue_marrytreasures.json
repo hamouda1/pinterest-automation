@@ -2623,9 +2623,13 @@
     "description": "Discover this trending cozy autumn staple. High quality, comfortable, and perfect for every day. Click to shop directly on Amazon. #fallfashion #autumnvibes #pumpkinspice #cozysweater #thanksgivingtee #ad",
     "image_url": "https://m.media-amazon.com/images/I/71veUSkT6bL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B0HC7GJYSH?tag=mostefa-daoua-20",
-    "status": "pending",
+    "status": "published",
     "queue_index": 175,
-    "link": "https://www.amazon.com/dp/B0HC7GJYSH?tag=mostefa-daoua-20"
+    "link": "https://www.amazon.com/dp/B0HC7GJYSH?tag=mostefa-daoua-20",
+    "published": true,
+    "pin_id": "677439968996595857",
+    "pin_url": "https://www.pinterest.com/pin/677439968996595857/",
+    "published_at": "2026-11-12 20:52:07"
   },
   {
     "board_id": "677440037639174208",

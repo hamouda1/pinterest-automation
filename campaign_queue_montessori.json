@@ -1797,10 +1797,14 @@
     "board_name": "Toddler Sensory Bins & Learning",
     "style_tag": "Toddler Sensory Play",
     "price": "$24.99",
-    "status": "pending",
+    "status": "published",
     "created_at": "2026-11-08T16:39:46Z",
     "queue_index": 105,
-    "affiliate_url": "https://www.amazon.com/dp/B0D9W82T4T?tag=mostefa-daoua-20"
+    "affiliate_url": "https://www.amazon.com/dp/B0D9W82T4T?tag=mostefa-daoua-20",
+    "published": true,
+    "pin_id": "1091630397217580358",
+    "pin_url": "https://www.pinterest.com/pin/1091630397217580358/",
+    "published_at": "2026-11-12 20:51:49"
   },
   {
     "asin": "B0BVH6894R",
