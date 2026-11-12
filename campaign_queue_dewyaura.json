@@ -2755,10 +2755,14 @@
     "board_name": "Aesthetic Morning & Night Skincare Steps",
     "style_tag": "Aesthetic Skincare Steps",
     "price": "$19.99",
-    "status": "pending",
+    "status": "published",
     "created_at": "2026-11-09T15:15:44Z",
     "queue_index": 158,
-    "affiliate_url": "https://www.amazon.com/dp/B0BQCC71WR?tag=mostefa-daoua-20"
+    "affiliate_url": "https://www.amazon.com/dp/B0BQCC71WR?tag=mostefa-daoua-20",
+    "published": true,
+    "pin_id": "254453447695074890",
+    "pin_url": "https://www.pinterest.com/pin/254453447695074890/",
+    "published_at": "2026-11-12 22:12:42"
   },
   {
     "asin": "B09WVFZ377",

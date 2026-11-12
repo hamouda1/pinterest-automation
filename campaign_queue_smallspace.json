@@ -1854,10 +1854,14 @@
     "board_name": "Tiny Kitchen Organization Hacks",
     "style_tag": "Tiny Kitchen Hack",
     "price": "$24.99",
-    "status": "pending",
+    "status": "published",
     "created_at": "2026-11-08T16:40:14Z",
     "queue_index": 108,
-    "affiliate_url": "https://www.amazon.com/dp/B0D45S3TGJ?tag=mostefa-daoua-20"
+    "affiliate_url": "https://www.amazon.com/dp/B0D45S3TGJ?tag=mostefa-daoua-20",
+    "published": true,
+    "pin_id": "266486502947129146",
+    "pin_url": "https://www.pinterest.com/pin/266486502947129146/",
+    "published_at": "2026-11-12 22:13:00"
   },
   {
     "asin": "B0H1Q3BQX8",

@@ -1592,8 +1592,12 @@
     "description": "Curated for Canva designers, freelancers, Airbnb hosts, and modern business owners: Custom Acrylic QR Code Sign for Business Personalized QR Plaque for Scan to Pay. Level up your professional aesthetic and workflow. Tap the pin to check pricing, specs, and details on Amazon! #airbnbhost #shorttermrental #vacationrental #superhost #airbnbinspo #ad",
     "image_url": "https://m.media-amazon.com/images/I/710hth9q+6L.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B0FC2BNJKP?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 9
+    "status": "published",
+    "queue_index": 9,
+    "published": true,
+    "pin_id": "267753140343834376",
+    "pin_url": "https://www.pinterest.com/pin/267753140343834376/",
+    "published_at": "2026-11-12 22:13:06"
   },
   {
     "board_id": "267753209035489470",

@@ -2732,8 +2732,12 @@
     "image_url": "https://m.media-amazon.com/images/I/81qdRO4uAML.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B00V3TO9EK?tag=mostefa-daoua-20",
     "link": "https://www.amazon.com/dp/B00V3TO9EK?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 182
+    "status": "published",
+    "queue_index": 182,
+    "published": true,
+    "pin_id": "275071489740222902",
+    "pin_url": "https://www.pinterest.com/pin/275071489740222902/",
+    "published_at": "2026-11-12 22:12:48"
   },
   {
     "board_id": "275071558429949083",

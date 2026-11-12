@@ -364,8 +364,12 @@
     "board_id": "1093037840753522209",
     "board_name": "Viral Amazon Fashion & Aesthetic Finds",
     "account": "habiboumez",
-    "status": "pending",
-    "queue_order": 18
+    "status": "published",
+    "queue_order": 18,
+    "published": true,
+    "pin_id": "1093037772100981416",
+    "pin_url": "https://www.pinterest.com/pin/1093037772100981416/",
+    "published_at": "2026-11-12 22:12:13"
   },
   {
     "order": 4,
