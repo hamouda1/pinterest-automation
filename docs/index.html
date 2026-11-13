@@ -397,18 +397,35 @@
       document.getElementById("cta-anchor").href = mainAmazonUrl;
       document.getElementById("img-anchor").href = mainAmazonUrl;
 
-      // حماية مصدر الصورة: قبول خوادم أمازون الرسمية
+      // 3. إدارة عرض الصورة بذكاء مع نظام الاسترداد التلقائي (Image Fallback Engine)
+      const imgAnchor = document.getElementById("img-anchor");
       const imgEl = document.getElementById("product-img");
-      const isAmazonImage = /^https:\/\/([a-z0-9\-\.]+\.)?(media-amazon\.com|ssl-images-amazon\.com|images-amazon\.com)\//i.test(rawImg);
-      if (isAmazonImage) {
+      const amazonAsinFallback = `https://images-na.ssl-images-amazon.com/images/P/${rawAsin}.01._SCLZZZZZZZ_V1_.jpg`;
+
+      // التحقق من صلاحية أي رابط صورة HTTPS آمن (سواء كان من أمازون، أنسبلاش، أو غيتهاب بيجز)
+      const isHttpsUrl = /^https:\/\/[a-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;=%]+/i.test(rawImg);
+
+      let primaryFailed = false;
+      imgEl.onerror = function () {
+        if (!primaryFailed) {
+          primaryFailed = true;
+          // محاولة جلب الصورة الرسمية للمنتج مباشرة من سيرفرات أمازون عبر الـ ASIN
+          imgEl.src = amazonAsinFallback;
+        } else {
+          // إذا تعذر تحميل الصورتين، يتم إخفاء صندوق الصورة بأناقة وبدون ترك فراغ أبيض
+          imgAnchor.style.display = "none";
+        }
+      };
+
+      if (isHttpsUrl) {
         imgEl.src = rawImg;
       } else {
-        imgEl.alt = rawTitle;
-        imgEl.style.display = "none";
+        // إذا لم يتم تمرير رابط صورة (مثل بعض منتجات التيشيرتات)، يتم استخدام صورة أمازون الرسمية للـ ASIN فوراً
+        imgEl.src = amazonAsinFallback;
       }
 
       // ==============================================================
-      // 3. قراءة وبناء بطاقات المنتجات المشابهة (Related Products Injection)
+      // 4. قراءة وبناء بطاقات المنتجات المشابهة (Related Products Injection)
       // ==============================================================
       const relatedListEl = document.getElementById("related-list");
       const relatedSectionEl = document.getElementById("related-section");
@@ -430,16 +447,28 @@
           card.target = "_blank";
           card.rel = "nofollow noopener sponsored";
 
-          // صورة مصغرة آمنة
+          // صورة مصغرة ذكية مع استرداد تلقائي
           const thumbBox = document.createElement("div");
           thumbBox.className = "related-thumb";
           const thumbImg = document.createElement("img");
           thumbImg.alt = rTitle;
           thumbImg.loading = "lazy";
-          if (/^https:\/\/([a-z0-9\-\.]+\.)?(media-amazon\.com|ssl-images-amazon\.com|images-amazon\.com)\//i.test(rImg)) {
+
+          const relFallback = `https://images-na.ssl-images-amazon.com/images/P/${rAsin}.01._SL300_.jpg`;
+          let relFailed = false;
+          thumbImg.onerror = function() {
+            if (!relFailed) {
+              relFailed = true;
+              thumbImg.src = relFallback;
+            } else {
+              thumbBox.style.display = "none";
+            }
+          };
+
+          if (/^https:\/\/[a-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;=%]+/i.test(rImg)) {
             thumbImg.src = rImg;
           } else {
-            thumbImg.style.display = "none";
+            thumbImg.src = relFallback;
           }
           thumbBox.appendChild(thumbImg);
 
