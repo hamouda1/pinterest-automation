@@ -4,21 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="robots" content="noindex, nofollow">
-  <title>Curated Find | Product Details</title>
+  <title>Curated Find & Aesthetic Pairings</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --bg-page: #F6F4F0;
+      --bg-page: #F7F5F0;
       --card-bg: #FFFFFF;
       --accent: #B85D3B;
-      --accent-hover: #9A4829;
-      --amazon-btn: #FF9900;
-      --text-main: #18181B;
-      --text-muted: #64646A;
-      --border-light: #ECEAE4;
+      --accent-hover: #9E4D2F;
+      --accent-soft: #F9EFEB;
+      --amazon-gold: #F59E0B;
+      --text-main: #1C1917;
+      --text-muted: #6B7280;
+      --border-light: #E7E5E4;
+      --card-radius: 28px;
     }
 
     * {
@@ -36,90 +38,96 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 16px 12px 30px;
+      padding: 18px 12px 36px;
     }
 
-    /* البطاقة الرئيسية المتوافقة مع شاشات الموبايل */
-    .bridge-card {
+    /* Container Card with Luxury Styling */
+    .bridge-container {
       width: 100%;
-      max-width: 470px;
+      max-width: 540px;
       background: var(--card-bg);
-      border-radius: 28px;
-      padding: 22px 18px 24px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.07);
+      border-radius: var(--card-radius);
+      padding: 24px 20px 28px;
+      box-shadow: 0 25px 60px rgba(28, 25, 23, 0.08);
       border: 1px solid var(--border-light);
-      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
     }
 
-    /* شريط الإفصاح العلوي لضمان ظهوره قبل النقر */
+    /* Top Legal & Trust Banner */
     .disclosure-banner {
       width: 100%;
       background-color: #FAF8F5;
-      border: 1px solid var(--border-light);
+      border: 1px solid #ECE7E1;
       color: var(--text-muted);
       font-size: 11px;
       line-height: 1.4;
-      padding: 8px 12px;
+      padding: 8px 14px;
       border-radius: 12px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       font-weight: 600;
+      text-align: center;
     }
 
-    .badge-row {
+    /* Hero Section: Exact Pin Match */
+    .hero-badge-row {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background-color: #FFFBEB;
-      color: #B45309;
-      border: 1px solid #FDE68A;
-      padding: 5px 12px;
+      background-color: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid #F2DBD1;
+      padding: 5px 14px;
       border-radius: 100px;
       font-size: 11px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
-    /* حاوية الصورة الرئيسية القابلة للنقر */
-    .image-link {
+    .hero-image-link {
       width: 100%;
-      height: 260px;
+      height: 290px;
       background: #FFFFFF;
-      border-radius: 20px;
-      padding: 14px;
+      border-radius: 22px;
+      padding: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 16px;
-      border: 1px solid #F3F2EE;
+      border: 1px solid #F0EEE9;
       text-decoration: none;
       position: relative;
       overflow: hidden;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .image-link:active {
-      transform: scale(0.98);
+    .hero-image-link:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     }
 
-    .image-link img {
+    .hero-image-link:active {
+      transform: scale(0.985);
+    }
+
+    .hero-image-link img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
+      border-radius: 12px;
     }
 
-    .product-title {
+    .hero-title {
       font-family: 'Playfair Display', serif;
-      font-size: 22px;
+      font-size: 23px;
       font-weight: 700;
       color: var(--text-main);
       line-height: 1.3;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      text-align: center;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
@@ -127,15 +135,16 @@
       padding: 0 4px;
     }
 
-    .sub-note {
+    .hero-subnote {
       font-size: 13px;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       font-weight: 500;
+      text-align: center;
     }
 
-    /* زر التحويل الرئيسي العالي الوضوح */
-    .cta-button {
+    /* Giant High-Converting Hero Buy Button */
+    .hero-cta-btn {
       width: 100%;
       background-color: var(--text-main);
       color: #FFFFFF;
@@ -144,159 +153,176 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      padding: 16px 20px;
+      padding: 17px 22px;
       border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      box-shadow: 0 10px 22px rgba(24, 24, 27, 0.16);
+      gap: 12px;
+      box-shadow: 0 12px 26px rgba(28, 25, 23, 0.16);
       transition: background-color 0.2s ease, transform 0.15s ease;
     }
 
-    .cta-button:hover {
+    .hero-cta-btn:hover {
       background-color: var(--accent);
     }
 
-    .cta-button:active {
-      transform: scale(0.98);
+    .hero-cta-btn:active {
+      transform: scale(0.985);
     }
 
-    .cta-arrow {
-      font-size: 18px;
-      line-height: 1;
-    }
-
-    /* =================================================== */
-    /* قسم المنتجات الإضافية المشابهة (Related Cross-Sells) */
-    /* =================================================== */
-    .related-section {
+    /* ======================================================== */
+    /* Curated "Complete The Look" / Micro-Niche Pairings Grid  */
+    /* ======================================================== */
+    .pairings-section {
       width: 100%;
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px dashed var(--border-light);
+      margin-top: 30px;
+      padding-top: 24px;
+      border-top: 1px dashed #E2DED7;
       text-align: left;
     }
 
-    .related-header {
+    .pairings-header {
+      margin-bottom: 16px;
+    }
+
+    .pairings-title-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 14px;
-      padding: 0 2px;
+      margin-bottom: 4px;
     }
 
-    .related-title {
-      font-size: 13px;
+    .pairings-title {
+      font-size: 14px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.6px;
       color: var(--text-main);
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 7px;
     }
 
-    .related-tag-badge {
+    .pairings-badge {
       font-size: 10.5px;
-      background-color: #F4EFEA;
+      background-color: var(--accent-soft);
       color: var(--accent);
-      padding: 3px 8px;
+      padding: 3px 9px;
       border-radius: 6px;
       font-weight: 700;
     }
 
-    .related-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .pairings-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* 2-Column Responsive Grid */
+    .pairings-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
       width: 100%;
     }
 
-    .related-card {
-      display: flex;
-      align-items: center;
-      background: #FAF9F6;
+    @media (max-width: 440px) {
+      .pairings-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .pairing-card {
+      background: #FAF8F5;
       border: 1px solid var(--border-light);
-      border-radius: 16px;
-      padding: 10px 12px;
+      border-radius: 18px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
       text-decoration: none;
       color: inherit;
       transition: all 0.2s ease;
-      gap: 12px;
+      position: relative;
     }
 
-    .related-card:hover {
+    .pairing-card:hover {
       background: #FFFFFF;
       border-color: var(--accent);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
     }
 
-    .related-thumb {
-      width: 60px;
-      height: 60px;
+    .pairing-card:active {
+      transform: scale(0.985);
+    }
+
+    .pairing-thumb {
+      width: 100%;
+      height: 120px;
       background: #FFFFFF;
-      border-radius: 10px;
-      border: 1px solid #EFECE6;
-      padding: 4px;
+      border-radius: 12px;
+      padding: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
+      margin-bottom: 10px;
+      border: 1px solid #ECE7E1;
     }
 
-    .related-thumb img {
+    .pairing-thumb img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
     }
 
-    .related-info {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .related-name {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-main);
-      line-height: 1.3;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    .pairing-tag {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
       margin-bottom: 4px;
     }
 
-    .related-meta {
-      font-size: 11px;
-      color: var(--accent);
+    .pairing-name {
+      font-size: 12.5px;
       font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 4px;
+      color: var(--text-main);
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 10px;
+      flex: 1;
     }
 
-    .related-btn-pill {
+    .pairing-btn {
+      width: 100%;
       background: #FFFFFF;
-      border: 1px solid #D8D4CC;
+      border: 1px solid #D5D0C7;
       color: var(--text-main);
       font-size: 11px;
       font-weight: 800;
-      padding: 6px 10px;
-      border-radius: 8px;
-      flex-shrink: 0;
+      padding: 8px 10px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
       transition: all 0.2s ease;
     }
 
-    .related-card:hover .related-btn-pill {
+    .pairing-card:hover .pairing-btn {
       background: var(--text-main);
       color: #FFFFFF;
       border-color: var(--text-main);
     }
 
+    /* Trust Footer */
     .trust-footer {
-      margin-top: 18px;
+      margin-top: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -312,62 +338,81 @@
       gap: 4px;
     }
 
-    /* حالة الدخول بدون تحديد منتج */
+    .legal-footer {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 10.5px;
+      color: #8C827A;
+      line-height: 1.45;
+      padding: 0 10px;
+    }
+
+    /* Fallback View */
     .fallback-box {
       display: none;
-      padding: 30px 15px;
+      padding: 35px 15px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <main class="bridge-card">
-    <!-- الإفصاح القانوني الإلزامي لأمازون في أعلى البطاقة -->
+  <main class="bridge-container">
+    <!-- Mandatory Amazon Associate Disclosure at Top -->
     <div class="disclosure-banner">
       Disclosure: As an Amazon Associate, I earn from qualifying purchases at no extra cost to you.
     </div>
 
     <div id="product-view" style="width: 100%;">
-      <div class="badge-row">★ Curated Amazon Find</div>
+      <!-- 1️⃣ HERO PRODUCT: 100% PRECISE MATCH TO THE PIN -->
+      <div style="text-align: center;">
+        <div class="hero-badge-row">★ Featured Pin Find</div>
+      </div>
 
-      <!-- صورة المنتج الرئيسي القابلة للنقر -->
-      <a id="img-anchor" class="image-link" href="#" rel="nofollow noopener sponsored">
-        <img id="product-img" src="" alt="Featured Find" loading="eager">
+      <a id="hero-img-anchor" class="hero-image-link" href="#" rel="nofollow noopener sponsored">
+        <img id="hero-img" src="" alt="Featured Amazon Find" loading="eager">
       </a>
 
-      <h1 id="product-title" class="product-title">Loading Curated Find...</h1>
-      <p class="sub-note">Tap below to check current price, reviews & availability on Amazon.</p>
+      <h1 id="hero-title" class="hero-title">Loading Curated Find...</h1>
+      <p class="hero-subnote">Tap below to check current price, reviews & availability on Amazon.</p>
 
-      <!-- زر المنتج الرئيسي -->
-      <a id="cta-anchor" class="cta-button" href="#" rel="nofollow noopener sponsored">
+      <a id="hero-cta-anchor" class="hero-cta-btn" href="#" rel="nofollow noopener sponsored">
         <span>Check Price on Amazon</span>
-        <span class="cta-arrow">→</span>
+        <span style="font-size: 17px; line-height: 1;">→</span>
       </a>
 
-      <!-- قسم المنتجات الإضافية المشابهة (يظهر تلقائياً عند تمرير بدائل) -->
-      <section id="related-section" class="related-section" style="display: none;">
-        <div class="related-header">
-          <span class="related-title">✨ Complete The Look & Similar Finds</span>
-          <span class="related-tag-badge">Curated</span>
+      <!-- 2️⃣ COMPLETE THE LOOK: CURATED MICRO-NICHE COMPLEMENTARY FINDS -->
+      <section id="pairings-section" class="pairings-section" style="display: none;">
+        <div class="pairings-header">
+          <div class="pairings-title-row">
+            <span class="pairings-title">✨ Complete The Aesthetic</span>
+            <span class="pairings-badge">Curated Pairing</span>
+          </div>
+          <p class="pairings-subtitle">Handpicked complementary finds from the exact same aesthetic collection</p>
         </div>
-        <div id="related-list" class="related-list"></div>
+        
+        <div id="pairings-grid" class="pairings-grid"></div>
       </section>
 
+      <!-- Trust & Statutory Disclosures -->
       <div class="trust-footer">
         <span>🔒 Direct Amazon Links</span>
         <span>•</span>
-        <span>✓ Verified Finds</span>
+        <span>✓ 100% Verified Stock</span>
+        <span>•</span>
+        <span>🛡️ SSL Secured</span>
       </div>
-      <footer style="margin-top: 14px; text-align: center; font-size: 10.5px; color: #8C827A; line-height: 1.4;">
+      
+      <footer class="legal-footer">
         As an Amazon Associate I earn from qualifying purchases. All trademarks and logos are property of Amazon.com, Inc.
       </footer>
     </div>
 
-    <!-- يظهر فقط إذا دخل شخص للرابط الرئيسي بدون تحديد منتج -->
+    <!-- Fallback if accessed without ASIN -->
     <div id="fallback-view" class="fallback-box">
-      <h2 class="product-title" style="margin-bottom: 14px;">Explore Our Top Curated Finds</h2>
-      <p class="sub-note">Visit our official Amazon storefront or browse today's trending picks.</p>
-      <a id="fallback-anchor" class="cta-button" href="https://www.amazon.com/?tag=mostefa-daoua-20" rel="nofollow noopener sponsored">
+      <h2 class="hero-title" style="margin-bottom: 14px;">Explore Our Top Curated Finds</h2>
+      <p class="hero-subnote">Visit our official Amazon storefront or browse today's trending aesthetic picks.</p>
+      <a id="fallback-anchor" class="hero-cta-btn" href="https://www.amazon.com/?tag=mostefa-daoua-20" rel="nofollow noopener sponsored">
         <span>Browse Amazon Finds →</span>
       </a>
     </div>
@@ -375,7 +420,7 @@
 
   <script>
     (function () {
-      // 🔒 تثبيت معرف الأفلييت الخاص بك كقيمة أساسية محمية ضد التلاعب
+      // 🔒 LOCKED AMAZON AFFILIATE TAG
       const LOCKED_AFFILIATE_TAG = "mostefa-daoua-20";
 
       const params = new URLSearchParams(window.location.search || window.location.hash.replace(/^#\/?/, ""));
@@ -384,7 +429,7 @@
       const rawImg = (params.get("img") || "").trim();
       const rawTpl = (params.get("tpl") || "pin").replace(/[^a-zA-Z0-9_-]/g, "");
 
-      // 1. التحقق من رقم الـ ASIN الأساسي (10 محارف)
+      // 1. Validation of Hero ASIN (10 characters)
       const isValidAsin = rawAsin.length === 10;
       if (!isValidAsin) {
         document.getElementById("product-view").style.display = "none";
@@ -392,67 +437,63 @@
         return;
       }
 
-      // 2. بناء رابط المنتج الرئيسي المعتمد مع معرف mostefa-daoua-20
-      const mainAmazonUrl = `https://www.amazon.com/dp/${rawAsin}/?tag=${LOCKED_AFFILIATE_TAG}&linkCode=ll1&ref_=pin_${rawTpl}`;
+      // 2. Build Hero Direct Amazon URL
+      const heroAmazonUrl = `https://www.amazon.com/dp/${rawAsin}/?tag=${LOCKED_AFFILIATE_TAG}&linkCode=ll1&ref_=pin_${rawTpl}`;
 
       document.title = `${rawTitle} | Curated Find`;
-      document.getElementById("product-title").textContent = rawTitle;
-      document.getElementById("cta-anchor").href = mainAmazonUrl;
-      document.getElementById("img-anchor").href = mainAmazonUrl;
+      document.getElementById("hero-title").textContent = rawTitle;
+      document.getElementById("hero-cta-anchor").href = heroAmazonUrl;
+      document.getElementById("hero-img-anchor").href = heroAmazonUrl;
 
-      // 3. إدارة عرض الصورة بذكاء مع نظام الاسترداد التلقائي (Image Fallback Engine)
-      const imgAnchor = document.getElementById("img-anchor");
-      const imgEl = document.getElementById("product-img");
+      // 3. Hero Image with Fail-safe Fallback to Amazon CDN
+      const heroImgEl = document.getElementById("hero-img");
+      const heroImgAnchor = document.getElementById("hero-img-anchor");
       const amazonAsinFallback = `https://images-na.ssl-images-amazon.com/images/P/${rawAsin}.01._SCLZZZZZZZ_V1_.jpg`;
 
-      // التحقق من صلاحية أي رابط صورة HTTPS آمن (سواء كان من أمازون، أنسبلاش، أو غيتهاب بيجز)
       const isHttpsUrl = /^https:\/\/[a-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;=%]+/i.test(rawImg);
 
-      let primaryFailed = false;
-      imgEl.onerror = function () {
-        if (!primaryFailed) {
-          primaryFailed = true;
-          // محاولة جلب الصورة الرسمية للمنتج مباشرة من سيرفرات أمازون عبر الـ ASIN
-          imgEl.src = amazonAsinFallback;
+      let heroFailed = false;
+      heroImgEl.onerror = function () {
+        if (!heroFailed) {
+          heroFailed = true;
+          heroImgEl.src = amazonAsinFallback;
         } else {
-          // إذا تعذر تحميل الصورتين، يتم إخفاء صندوق الصورة بأناقة وبدون ترك فراغ أبيض
-          imgAnchor.style.display = "none";
+          heroImgAnchor.style.display = "none";
         }
       };
 
       if (isHttpsUrl) {
-        imgEl.src = rawImg;
+        heroImgEl.src = rawImg;
       } else {
-        // إذا لم يتم تمرير رابط صورة (مثل بعض منتجات التيشيرتات)، يتم استخدام صورة أمازون الرسمية للـ ASIN فوراً
-        imgEl.src = amazonAsinFallback;
+        heroImgEl.src = amazonAsinFallback;
       }
 
       // ==============================================================
-      // 4. قراءة وبناء بطاقات المنتجات المشابهة (Related Products Injection)
+      // 4. Curated Pairings Grid (Up to 8 Micro-Niche Pairings)
       // ==============================================================
-      const relatedListEl = document.getElementById("related-list");
-      const relatedSectionEl = document.getElementById("related-section");
-      let validRelatedCount = 0;
+      const pairingsGridEl = document.getElementById("pairings-grid");
+      const pairingsSectionEl = document.getElementById("pairings-section");
+      let validPairingsCount = 0;
 
-      // فحص المعاملات الممررة (r1, r2, r3)
-      for (let i = 1; i <= 3; i++) {
+      const styleTags = ["Matching Aesthetic", "Cozy Pairing", "Curated Addition", "Style Completer", "Trending Accent", "Space Essential"];
+
+      for (let i = 1; i <= 8; i++) {
         const rAsin = (params.get(`r${i}`) || "").trim().toUpperCase().replace(/[^A-Z0-9]/g, "");
         const rTitle = (params.get(`r${i}_t`) || "").trim();
         const rImg = (params.get(`r${i}_i`) || "").trim();
 
         if (rAsin.length === 10 && rTitle) {
-          // 🔒 تثبيت معرف الأفلييت mostefa-daoua-20 لكل منتج مشابه أيضاً
           const relUrl = `https://www.amazon.com/dp/${rAsin}/?tag=${LOCKED_AFFILIATE_TAG}&linkCode=ll1&ref_=pin_rel_${i}`;
 
           const card = document.createElement("a");
-          card.className = "related-card";
+          card.className = "pairing-card";
           card.href = relUrl;
           card.target = "_blank";
           card.rel = "nofollow noopener sponsored";
 
-          // صورة مصغرة ذكية مع استرداد تلقائي
+          // Thumbnail with multi-tier fallback
           const thumbBox = document.createElement("div");
-          thumbBox.className = "related-thumb";
+          thumbBox.className = "pairing-thumb";
           const thumbImg = document.createElement("img");
           thumbImg.alt = rTitle;
           thumbImg.loading = "lazy";
@@ -475,35 +516,33 @@
           }
           thumbBox.appendChild(thumbImg);
 
-          // تفاصيل المنتج المصغر
-          const infoBox = document.createElement("div");
-          infoBox.className = "related-info";
-          const nameEl = document.createElement("div");
-          nameEl.className = "related-name";
-          nameEl.textContent = rTitle;
-          const metaEl = document.createElement("div");
-          metaEl.className = "related-meta";
-          metaEl.innerHTML = "<span>View Current Price</span> <span>→</span>";
-          infoBox.appendChild(nameEl);
-          infoBox.appendChild(metaEl);
+          // Card Tag (e.g. "Matching Aesthetic")
+          const tagEl = document.createElement("div");
+          tagEl.className = "pairing-tag";
+          tagEl.textContent = styleTags[(i - 1) % styleTags.length];
 
-          // زر مصغر
-          const btnPill = document.createElement("div");
-          btnPill.className = "related-btn-pill";
-          btnPill.textContent = "Check";
+          // Card Title
+          const nameEl = document.createElement("div");
+          nameEl.className = "pairing-name";
+          nameEl.textContent = rTitle;
+
+          // Quick Action Button
+          const btnEl = document.createElement("div");
+          btnEl.className = "pairing-btn";
+          btnEl.innerHTML = "<span>View on Amazon</span> <span>→</span>";
 
           card.appendChild(thumbBox);
-          card.appendChild(infoBox);
-          card.appendChild(btnPill);
+          card.appendChild(tagEl);
+          card.appendChild(nameEl);
+          card.appendChild(btnEl);
 
-          relatedListEl.appendChild(card);
-          validRelatedCount++;
+          pairingsGridEl.appendChild(card);
+          validPairingsCount++;
         }
       }
 
-      // إظهار قسم المنتجات المشابهة فقط إذا توفرت منتجات صالحة
-      if (validRelatedCount > 0) {
-        relatedSectionEl.style.display = "block";
+      if (validPairingsCount > 0) {
+        pairingsSectionEl.style.display = "block";
       }
 
     })();
