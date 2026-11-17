@@ -2095,10 +2095,11 @@
     "board_name": "Aesthetic Diaper Caddies & Stations",
     "style_tag": "Diaper Station Inspo",
     "price": "$24.99",
-    "status": "pending",
+    "status": "skipped_duplicate",
     "created_at": "2026-11-08T16:39:57Z",
     "queue_index": 121,
-    "affiliate_url": "https://www.amazon.com/dp/B0FQNQ3N44?tag=mostefa-daoua-20"
+    "affiliate_url": "https://www.amazon.com/dp/B0FQNQ3N44?tag=mostefa-daoua-20",
+    "skipped_at": "2026-11-17 22:19:23"
   },
   {
     "asin": "B0DHSM6TPC",
@@ -2110,10 +2111,11 @@
     "board_name": "Aesthetic Diaper Caddies & Stations",
     "style_tag": "Diaper Station Inspo",
     "price": "$24.99",
-    "status": "pending",
+    "status": "skipped_duplicate",
     "created_at": "2026-11-08T16:39:57Z",
     "queue_index": 122,
-    "affiliate_url": "https://www.amazon.com/dp/B0DHSM6TPC?tag=mostefa-daoua-20"
+    "affiliate_url": "https://www.amazon.com/dp/B0DHSM6TPC?tag=mostefa-daoua-20",
+    "skipped_at": "2026-11-17 22:19:23"
   },
   {
     "asin": "B0F43L7M4Y",
@@ -2125,10 +2127,11 @@
     "board_name": "Aesthetic Diaper Caddies & Stations",
     "style_tag": "Diaper Station Inspo",
     "price": "$24.99",
-    "status": "pending",
+    "status": "skipped_duplicate",
     "created_at": "2026-11-08T16:39:57Z",
     "queue_index": 123,
-    "affiliate_url": "https://www.amazon.com/dp/B0F43L7M4Y?tag=mostefa-daoua-20"
+    "affiliate_url": "https://www.amazon.com/dp/B0F43L7M4Y?tag=mostefa-daoua-20",
+    "skipped_at": "2026-11-17 22:19:23"
   },
   {
     "asin": "B0CZ7G1WLD",

@@ -2076,10 +2076,11 @@
     "board_name": "Closet Organization & Shoe Storage Hacks",
     "style_tag": "Closet Space Saver",
     "price": "$24.99",
-    "status": "pending",
+    "status": "skipped_duplicate",
     "created_at": "2026-11-08T16:40:19Z",
     "queue_index": 120,
-    "affiliate_url": "https://www.amazon.com/dp/B01KSWOL1I?tag=mostefa-daoua-20"
+    "affiliate_url": "https://www.amazon.com/dp/B01KSWOL1I?tag=mostefa-daoua-20",
+    "skipped_at": "2026-11-17 22:19:24"
   },
   {
     "asin": "B0BN1RVVLX",

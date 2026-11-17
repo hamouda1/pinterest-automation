@@ -3759,8 +3759,9 @@
     "image_url": "https://m.media-amazon.com/images/I/710poY1gWVL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B0D7Q1DWPF?tag=mostefa-daoua-20",
     "link": "https://www.amazon.com/dp/B0D7Q1DWPF?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 250
+    "status": "skipped_duplicate",
+    "queue_index": 250,
+    "skipped_at": "2026-11-17 22:19:19"
   },
   {
     "board_id": "217580294436787522",
@@ -3771,8 +3772,9 @@
     "image_url": "https://m.media-amazon.com/images/I/71g-h4gRoHL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B0DSLCQMXR?tag=mostefa-daoua-20",
     "link": "https://www.amazon.com/dp/B0DSLCQMXR?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 251
+    "status": "skipped_duplicate",
+    "queue_index": 251,
+    "skipped_at": "2026-11-17 22:19:19"
   },
   {
     "board_id": "217580294436787523",
@@ -3783,8 +3785,9 @@
     "image_url": "https://m.media-amazon.com/images/I/51aV3DiJffL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B074HWJ5SR?tag=mostefa-daoua-20",
     "link": "https://www.amazon.com/dp/B074HWJ5SR?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 252
+    "status": "skipped_duplicate",
+    "queue_index": 252,
+    "skipped_at": "2026-11-17 22:19:19"
   },
   {
     "board_id": "217580294436787518",
@@ -3795,8 +3798,9 @@
     "image_url": "https://m.media-amazon.com/images/I/81QlXSQLiFL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B0DY146HZN?tag=mostefa-daoua-20",
     "link": "https://www.amazon.com/dp/B0DY146HZN?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 253
+    "status": "skipped_duplicate",
+    "queue_index": 253,
+    "skipped_at": "2026-11-17 22:19:19"
   },
   {
     "board_id": "217580294436787519",
@@ -3807,8 +3811,9 @@
     "image_url": "https://m.media-amazon.com/images/I/51-ShI9CgiL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B07XLL45CH?tag=mostefa-daoua-20",
     "link": "https://www.amazon.com/dp/B07XLL45CH?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 254
+    "status": "skipped_duplicate",
+    "queue_index": 254,
+    "skipped_at": "2026-11-17 22:19:19"
   },
   {
     "board_id": "217580294436787520",
@@ -3819,8 +3824,9 @@
     "image_url": "https://m.media-amazon.com/images/I/61-FSl0YuLL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B0D3ZRF62F?tag=mostefa-daoua-20",
     "link": "https://www.amazon.com/dp/B0D3ZRF62F?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 255
+    "status": "skipped_duplicate",
+    "queue_index": 255,
+    "skipped_at": "2026-11-17 22:19:19"
   },
   {
     "board_id": "217580294436787521",
@@ -3831,8 +3837,9 @@
     "image_url": "https://m.media-amazon.com/images/I/61vYvAlg7fL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B0BY8V2VMS?tag=mostefa-daoua-20",
     "link": "https://www.amazon.com/dp/B0BY8V2VMS?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 256
+    "status": "skipped_duplicate",
+    "queue_index": 256,
+    "skipped_at": "2026-11-17 22:19:20"
   },
   {
     "board_id": "217580294436787522",

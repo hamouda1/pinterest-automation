@@ -2977,10 +2977,11 @@
     "board_name": "Vanity Organization & Skincare Fridges",
     "style_tag": "Aesthetic Vanity Setup",
     "price": "$19.99",
-    "status": "pending",
+    "status": "skipped_duplicate",
     "created_at": "2026-11-09T15:15:50Z",
     "queue_index": 170,
-    "affiliate_url": "https://www.amazon.com/dp/B0C2TK8QXL?tag=mostefa-daoua-20"
+    "affiliate_url": "https://www.amazon.com/dp/B0C2TK8QXL?tag=mostefa-daoua-20",
+    "skipped_at": "2026-11-17 22:19:21"
   },
   {
     "asin": "B0F5X9PLDY",

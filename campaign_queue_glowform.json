@@ -2918,8 +2918,9 @@
     "image_url": "https://m.media-amazon.com/images/I/81MhEwd7cfL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B0GY9N725K?tag=mostefa-daoua-20",
     "link": "https://www.amazon.com/dp/B0GY9N725K?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 194
+    "status": "skipped_duplicate",
+    "queue_index": 194,
+    "skipped_at": "2026-11-17 22:19:21"
   },
   {
     "board_id": "275071558429949083",
@@ -2930,8 +2931,9 @@
     "image_url": "https://m.media-amazon.com/images/I/71oDKnoXQKL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B0GK1H4S9R?tag=mostefa-daoua-20",
     "link": "https://www.amazon.com/dp/B0GK1H4S9R?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 195
+    "status": "skipped_duplicate",
+    "queue_index": 195,
+    "skipped_at": "2026-11-17 22:19:22"
   },
   {
     "board_id": "275071558429949083",
