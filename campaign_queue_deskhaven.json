@@ -3746,8 +3746,9 @@
     "image_url": "https://m.media-amazon.com/images/I/71JLTZtw0jL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B0GMX15B55?tag=mostefa-daoua-20",
     "link": "https://www.amazon.com/dp/B0GMX15B55?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 249
+    "status": "skipped_duplicate",
+    "queue_index": 249,
+    "skipped_at": "2026-11-17 15:21:06"
   },
   {
     "board_id": "217580294436787521",

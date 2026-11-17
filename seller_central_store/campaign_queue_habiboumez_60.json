@@ -531,8 +531,9 @@
     "board_id": "1093037840753522208",
     "board_name": "Cute Pet Lover Shirts & Gifts",
     "account": "habiboumez",
-    "status": "pending",
-    "queue_order": 26
+    "status": "skipped_duplicate",
+    "queue_order": 26,
+    "skipped_at": "2026-11-17 15:21:03"
   },
   {
     "asin": "B0HKTP145Z",

@@ -304,8 +304,9 @@
     "description": "Curated for Canva designers, freelancers, Airbnb hosts, and modern business owners: NERO MANETTI Leather Portfolio Folder. Level up your professional aesthetic and workflow. Tap the pin to check pricing, specs, and details on Amazon! #clientonboarding #businessowner #freelancerlife #pricingguide #branddesign #ad",
     "image_url": "https://m.media-amazon.com/images/I/818rFU2VOWL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B073Q32DC7?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 21
+    "status": "skipped_duplicate",
+    "queue_index": 21,
+    "skipped_at": "2026-11-17 15:21:09"
   },
   {
     "board_id": "267753209035491823",

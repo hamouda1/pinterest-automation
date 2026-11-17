@@ -4586,8 +4586,9 @@
     "image_url": "https://m.media-amazon.com/images/I/7176guoi+KL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B0D1FQW8WT?tag=mostefa-daoua-20",
     "link": "https://www.amazon.com/dp/B0D1FQW8WT?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 305
+    "status": "skipped_duplicate",
+    "queue_index": 305,
+    "skipped_at": "2026-11-17 15:21:04"
   },
   {
     "board_id": "1106196795914700327",

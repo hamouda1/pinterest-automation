@@ -2961,10 +2961,11 @@
     "board_name": "Aesthetic Glassware, Mugs & Straws",
     "style_tag": "Home Cafe Glassware",
     "price": "$19.99",
-    "status": "pending",
+    "status": "skipped_duplicate",
     "created_at": "2026-11-09T15:16:27Z",
     "queue_index": 169,
-    "affiliate_url": "https://www.amazon.com/dp/B0B1PRRZQX?tag=mostefa-daoua-20"
+    "affiliate_url": "https://www.amazon.com/dp/B0B1PRRZQX?tag=mostefa-daoua-20",
+    "skipped_at": "2026-11-17 15:21:05"
   },
   {
     "asin": "B0CJM163R2",
