@@ -513,8 +513,9 @@
     "board_id": "1093037840753522212",
     "board_name": "Holiday Season Graphic Sweaters & Gifts",
     "account": "habiboumez",
-    "status": "pending",
-    "queue_order": 25
+    "status": "skipped_duplicate",
+    "queue_order": 25,
+    "skipped_at": "2026-11-17 14:34:20"
   },
   {
     "asin": "B0HQFGBC4G",

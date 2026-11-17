@@ -2847,9 +2847,10 @@
     "description": "Discover this trending aesthetic graphic tee. High quality, comfortable, and perfect for every day. Click to shop directly on Amazon. #graphictees #aestheticshirts #vintagetees #indiefashion #streetwear #ad",
     "image_url": "https://m.media-amazon.com/images/I/71Elk+Es7jL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B0HB4V64KV?tag=mostefa-daoua-20",
-    "status": "pending",
+    "status": "skipped_duplicate",
     "queue_index": 189,
-    "link": "https://www.amazon.com/dp/B0HB4V64KV?tag=mostefa-daoua-20"
+    "link": "https://www.amazon.com/dp/B0HB4V64KV?tag=mostefa-daoua-20",
+    "skipped_at": "2026-11-17 14:34:26"
   },
   {
     "board_id": "677440037639070616",

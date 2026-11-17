@@ -3552,9 +3552,10 @@
     "description": "Discover this Viral Amazon Home Scent & Self-Care find on Amazon! Aesthetic, highly rated, and perfect for your home sanctuary. #amazonfinds #homedecor #selfcare #ad",
     "image_url": "https://m.media-amazon.com/images/I/61VdfhhT1NL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B07VKMG3Z8?tag=mostefa-daoua-20",
-    "status": "pending",
+    "status": "skipped_duplicate",
     "queue_index": 236,
-    "link": "https://www.amazon.com/dp/B07VKMG3Z8?tag=mostefa-daoua-20"
+    "link": "https://www.amazon.com/dp/B07VKMG3Z8?tag=mostefa-daoua-20",
+    "skipped_at": "2026-11-17 14:34:22"
   },
   {
     "board_id": "268668002709769950",

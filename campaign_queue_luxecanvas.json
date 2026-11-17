@@ -292,8 +292,9 @@
     "description": "Curated for Canva designers, freelancers, Airbnb hosts, and modern business owners: Maruse Italian Leather Executive Padfolio. Level up your professional aesthetic and workflow. Tap the pin to check pricing, specs, and details on Amazon! #clientonboarding #businessowner #freelancerlife #pricingguide #branddesign #ad",
     "image_url": "https://m.media-amazon.com/images/I/81hY69KbjCL.jpg",
     "affiliate_url": "https://www.amazon.com/dp/B07SXCRCPP?tag=mostefa-daoua-20",
-    "status": "pending",
-    "queue_index": 20
+    "status": "skipped_duplicate",
+    "queue_index": 20,
+    "skipped_at": "2026-11-17 14:34:26"
   },
   {
     "board_id": "267753209035491823",
