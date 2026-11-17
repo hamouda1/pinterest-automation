@@ -44,5 +44,10 @@ jobs:
         run: |
           git config --global user.name "Pinterest Cloud Publisher"
           git config --global user.email "bot@pinterest-network.internal"
-          git add campaign_queue_*.json seller_central_store/campaign_queue_*.json seller_central_store/asin_to_clean_image_cache.json last_network_publish_report.json published_asins_history.json 2>/dev/null || true
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-publish cycle: 11 accounts updated [skip ci]" && git push)
+          git add -A
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Auto-publish cycle: 11 accounts updated [skip ci]"
+            git push origin main
+          else
+            echo "No changes to commit"
+          fi
