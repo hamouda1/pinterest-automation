@@ -134,6 +134,15 @@ ACCOUNTS_CONFIG = [
         "is_seller_apparel": False,
         "default_board_id": "677440037637741879",
         "default_board_name": "Fruiti Hoodies"
+    },
+    {
+        "id": "CozyReadHaven",
+        "username": "CozyReadHaven",
+        "business_name": "BookishHaven | Cozy Reading Nooks & Bookish Finds",
+        "queue_file": ROOT / "campaign_queue_cozyreadhaven.json",
+        "is_seller_apparel": False,
+        "default_board_id": "239676080108617140",
+        "default_board_name": "Cozy Reading Nook Ideas & Inspo"
     }
 ]
 
@@ -197,6 +206,22 @@ def run_network_round(dry_run=False, target_account=None):
         }
         acc_history = set(history.get(acc_id, []))
         
+        api = PinterestAPI(token=token)
+        live_asins = set()
+        live_titles = set()
+        try:
+            recent_live_pins = api.get_recent_pins(page_size=50)
+            for lp in recent_live_pins:
+                lp_link = lp.get("link", "")
+                lp_title = (lp.get("title") or "").strip().lower()
+                if lp_title:
+                    live_titles.add(lp_title)
+                m_asin = re.search(r'[/?=](B0[A-Z0-9]{8})', lp_link)
+                if m_asin:
+                    live_asins.add(m_asin.group(1))
+        except Exception as live_chk_err:
+            print(f"   ⚠️ Live duplicate check notice: {live_chk_err}", flush=True)
+
         target_item = None
         target_idx = -1
         queue_dirty = False
@@ -204,11 +229,18 @@ def run_network_round(dry_run=False, target_account=None):
         for i, item in enumerate(queue):
             if item.get("status") == "pending":
                 item_key = (item.get("asin") or item.get("sku") or item.get("title", "")).strip().lower()
-                asin_val = item.get("asin")
+                asin_val = (item.get("asin") or "").strip()
+                title_val = (item.get("seo_title") or item.get("title") or "").strip().lower()
                 
-                # Deduplication check: Has this product/ASIN already been published for this account?
-                if (item_key and item_key in published_keys) or (asin_val and asin_val in acc_history):
-                    print(f"   🛡️ Auto-Skipping Duplicate [{asin_val or item_key}]: Already published. Marking as skipped_duplicate.", flush=True)
+                # Zero-Trust Deduplication: Check queue history, account history, and live Pinterest feed
+                is_duplicate = (
+                    (item_key and item_key in published_keys) or
+                    (asin_val and asin_val in acc_history) or
+                    (asin_val and asin_val in live_asins) or
+                    (title_val and title_val in live_titles)
+                )
+                if is_duplicate:
+                    print(f"   🛡️ Auto-Skipping Duplicate [{asin_val or item_key}]: Already published/live. Marking as skipped_duplicate.", flush=True)
                     item["status"] = "skipped_duplicate"
                     item["skipped_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                     queue_dirty = True
